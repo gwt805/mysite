@@ -1,0 +1,9 @@
+pymysql
+django
+django-cors-headers
+loguru
+requests
+pynacl
+minio
+uuid
+psutil

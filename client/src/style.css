@@ -1,0 +1,74 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  cursor: url("./assets/mouse.png"), default !important;
+}
+html.dark {
+  --w-e-textarea-bg-color: transparent;
+  --w-e-textarea-color: #fff;
+  --w-e-textarea-border-color: #fff;
+  --w-e-textarea-slight-border-color: #333;
+  --w-e-textarea-slight-color: #333;
+  --w-e-textarea-slight-bg-color: #807d7d; /*引用*/
+  --w-e-textarea-selected-border-color: #B4D5FF;
+  --w-e-textarea-handler-bg-color: #4290f7;
+  --w-e-toolbar-color: #fff;
+  --w-e-toolbar-bg-color: #6e6d6d;
+  --w-e-toolbar-active-color: #fff;
+  --w-e-toolbar-active-bg-color: #696767;
+  /* --w-e-toolbar-disabled-color: #999; */
+  /* --w-e-toolbar-border-color: #e8e8e8; */
+  --w-e-modal-button-bg-color: #333;
+  /* --w-e-modal-button-border-color: #d9d9d9; */
+  /* ...其他... */
+  
+  .w-e-text-container pre code {
+      /* font-size: 14px; */
+      /* color: #d4d4d4; */
+      background: #1e1e1e;
+      border-radius: 5px;
+      text-shadow: none;
+  }
+  .w-e-text-container p span {
+    background-color: transparent !important;
+  }
+  .w-e-text-container p span.img{
+    /* background-color: transparent !important; */
+    color: #000 !important;
+  }
+}
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(191, 191, 228, 0.4);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(68, 147, 199);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgb(68, 147, 199);
+}
+
+/*定义两端按钮的样式*/
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/*定义右下角汇合处的样式*/
+::-webkit-scrollbar-corner {
+  display: none;
+}
