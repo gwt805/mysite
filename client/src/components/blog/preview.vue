@@ -74,7 +74,7 @@ const editorConfig: Partial<IEditorConfig> = {
             }
         },
         uploadImage: {
-            server: `${API_BASE_URL}/api/file/uploadimg`, // 上传接口 URL
+            server: `${API_BASE_URL}/file/uploadimg`, // 上传接口 URL
             fieldName: "file", // 图片字段名称
             withCredentials: true,
             allowedFileTypes: ['image/*'],
@@ -101,7 +101,7 @@ const editorConfig: Partial<IEditorConfig> = {
             }
         },
         uploadVideo: {
-            server: `${API_BASE_URL}/api/file/uploadfile`, // 上传接口 URL
+            server: `${API_BASE_URL}/file/uploadfile`, // 上传接口 URL
             fieldName: "file", // 视频字段名称
             withCredentials: true,
             allowedFileTypes: ['video/*'],
@@ -119,7 +119,7 @@ const editorConfig: Partial<IEditorConfig> = {
             }
         },
         uploadAttachment: {
-            server: `${API_BASE_URL}/api/file/uploadfile`,
+            server: `${API_BASE_URL}/file/uploadfile`,
             fieldName: "file",
             withCredentials: true,
             allowedFileTypes: ['*'],

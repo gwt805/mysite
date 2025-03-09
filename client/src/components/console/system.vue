@@ -156,12 +156,11 @@ nextTick(() => {
 })
 
 onMounted(() => {
-    eventSource.value = new EventSource(`${API_BASE_URL}/api/systeminfo/`)
+    eventSource.value = new EventSource(`${API_BASE_URL}/systeminfo/`)
     eventSource.value.onmessage = (event: any) => {
         datas.value = JSON.parse(event.data).data
-        // console.log(datas.value[2])
     }
-    eventSource.value.onerror = () => eventSource.value = new EventSource(`${API_BASE_URL}/api/systeminfo/progress/`)
+    eventSource.value.onerror = () => eventSource.value = new EventSource(`${API_BASE_URL}/systeminfo/`)
     window.onresize = () => {
         for (let i = 0; i < echartsdom.value.length; i++) {
             echartsdom.value[i].resize();
