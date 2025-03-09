@@ -162,7 +162,7 @@ def uploadimg(request):
             files = request.FILES.getlist('file')[0]
             uid = str(uuid1())
             upload_file(f"{uid}-{files.name}", files, len(files))
-            return JsonResponse({'errno': 0,  'data': {'url': f"http://192.168.3.3:9000/blog/{uid}-{files.name}", "alt": f"{uid}-{files.name}"}})#{getip()}
+            return JsonResponse({'errno': 0,  'data': {'url': f"http://{getip()}/blog/{uid}-{files.name}", "alt": f"{uid}-{files.name}"}})#{getip()}
         except Exception as e:
             return JsonResponse({'errno': 1,  'message': "上传失败"})
 
@@ -173,6 +173,6 @@ def uploadvideo(request):
             files = request.FILES.getlist('file')[0]
             uid = str(uuid1())
             upload_file(f"{uid}-{files.name}", files, len(files))
-            return JsonResponse({'errno': 0,  'data': {'url': f"http://192.168.3.3:9000/blog/{uid}-{files.name}"}})
+            return JsonResponse({'errno': 0,  'data': {'url': f"http://{getip()}/blog/{uid}-{files.name}"}})
         except Exception as e:
             return JsonResponse({'errno': 1,  'message': "上传失败"})
