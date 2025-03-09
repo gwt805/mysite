@@ -19,5 +19,5 @@ from django.urls import path
 from qqbot.views import qqbot
 
 urlpatterns = [
-    path("qqbot/", qqbot),
+    path("api/qqbot/", qqbot),
 ]

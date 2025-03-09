@@ -151,9 +151,9 @@ def getip():
     return f"{socket.gethostbyname(socket.gethostname())}:9000"
 
 def upload_file(filename: str, file, size):
-    if not client.bucket_exists("blog"):
-        client.make_bucket(bucket_name="blog")
-    client.put_object(bucket_name="blog", object_name=filename, data=file, length=size)
+    if not client.bucket_exists("blogs"):
+        client.make_bucket(bucket_name="blogs")
+    client.put_object(bucket_name="blogs", object_name=filename, data=file, length=size)
 
 @csrf_exempt
 def uploadimg(request):
@@ -162,7 +162,7 @@ def uploadimg(request):
             files = request.FILES.getlist('file')[0]
             uid = str(uuid1())
             upload_file(f"{uid}-{files.name}", files, len(files))
-            return JsonResponse({'errno': 0,  'data': {'url': f"http://{getip()}/blog/{uid}-{files.name}", "alt": f"{uid}-{files.name}"}})#{getip()}
+            return JsonResponse({'errno': 0,  'data': {'url': f"https://weitao6.eu.org/blogs/{uid}-{files.name}", "alt": f"{uid}-{files.name}"}})#{getip()}
         except Exception as e:
             return JsonResponse({'errno': 1,  'message': "上传失败"})
 
@@ -173,6 +173,6 @@ def uploadvideo(request):
             files = request.FILES.getlist('file')[0]
             uid = str(uuid1())
             upload_file(f"{uid}-{files.name}", files, len(files))
-            return JsonResponse({'errno': 0,  'data': {'url': f"http://{getip()}/blog/{uid}-{files.name}"}})
+            return JsonResponse({'errno': 0,  'data': {'url': f"https://weitao6.eu.org/blogs/{uid}-{files.name}"}})
         except Exception as e:
             return JsonResponse({'errno': 1,  'message': "上传失败"})
