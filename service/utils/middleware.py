@@ -19,7 +19,6 @@ API_WHITELIST = [
 class AuthorizeMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if request.path not in API_WHITELIST:
-            print(request.path)
             if "sites" in request.path:
                 pass
             else:
