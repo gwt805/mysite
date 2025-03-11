@@ -37,7 +37,7 @@
 import { ref, type Ref, onMounted } from 'vue'
 import { public_elmsg_error, public_elmsg_success } from '@/utils/elmsg';
 import { get_blog_all, deleteblog } from "@/api/blog";
-
+import router from "@/routes/index";
 const currentPage = ref(1);
 const pageSize = ref(20);
 const count: Ref<number | any> = ref(0);
@@ -50,7 +50,7 @@ const get_data = () => {
         count.value = res.count;
     })
 }
-const go = (url: string) => { window.location.href = url }
+const go = (url: string) => { router.push(url) }//window.location.href = url }
 
 const handleCurrentChange = (val: number) => {
     currentPage.value = val;

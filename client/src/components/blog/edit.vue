@@ -26,7 +26,7 @@ import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import formulaModule from '@wangeditor/plugin-formula'
 import { ref, type Ref, reactive, shallowRef, onBeforeUnmount, onBeforeMount, onMounted} from 'vue'
 import { public_elmsg_error, public_elmsg_success, public_elmsg_warning } from "@/utils/elmsg";
-
+import router from "@/routes/index";
 
 const route = useRoute();
 const id:any = route.params.id
@@ -270,7 +270,8 @@ const submit = () => {
         if (res.code == 0){
             public_elmsg_success("更新成功")
             setTimeout(() => {
-                window.location.href = `/console/blog`
+                // window.location.href = `/console/blog`
+                router.push(`/console/blog`)
             }, 1000)
         }else public_elmsg_warning(res.msg)
     })

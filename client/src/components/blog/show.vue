@@ -41,7 +41,7 @@ import { get_blog_all } from '@/api/blog';
 import { ref, type Ref, onMounted } from 'vue';
 import { Search } from '@element-plus/icons-vue';
 import { public_elmsg_error } from '@/utils/elmsg';
-
+import router from "@/routes/index";
 const search_input = ref("");
 const currentPage = ref(1);
 const pageSize = ref(5);
@@ -88,10 +88,10 @@ const get_data = () => {
         loading.value = false;
     }
 }
-const go = (url: string) => { window.location.href = url;}
+const go = (url: string) => { router.push(url) }//window.location.href = url;}
 const goto = (path: string, id: number) => {
-    if (path == "show") window.location.href = `/blog/preview/${id}`;
-    else if (path == "create") window.location.href = `/page/create`;
+    if (path == "show") router.push(`/blog/preview/${id}`)//window.location.href = `/blog/preview/${id}`;
+    else if (path == "create") router.push(`/page/create`)//window.location.href = `/page/create`;
 }
 
 onMounted(() => {
