@@ -54,19 +54,17 @@ const loginfn = () => {
       setTimeout(() => {
         if (router.currentRoute.value.query.redirect) {
           const redirect: any = router.currentRoute.value.query.redirect;
-          router.push(redirect)
-          // window.location.href = redirect;
+          window.location.href = redirect;
         }
         else {
-          // window.location.href = "/index";
-          router.push("/index");
+          window.location.href = "/index";
         }
       }, 2000);
     } else public_elmsg_warning(res.msg);
   })
 };
 const backup = () => window.history.back();
-if (localStorage.getItem("token") != null) router.push("/index")//window.location.href = "/index";
+if (localStorage.getItem("token") != null) window.location.href = "/index";
 </script>
 
 <style scoped>

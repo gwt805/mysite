@@ -33,7 +33,7 @@ import { Editor, Toolbar } from "@wangeditor/editor-for-vue";
 import formulaModule from '@wangeditor/plugin-formula'
 import { ref, type Ref, reactive, shallowRef, onBeforeUnmount, onBeforeMount, onMounted} from 'vue'
 import { public_elmsg_error, public_elmsg_success, public_elmsg_warning } from "@/utils/elmsg";
-import router from "@/routes/index";
+
 
 const route = useRoute();
 // const type:any = route.params.type
@@ -172,7 +172,7 @@ onBeforeUnmount(() => {
 })
 
 const handleCreated = (editor:any) => {editorRef.value = editor}
-const go = (url: string) => { router.push(url) }//window.location.href = url;}
+const go = (url: string) => { window.location.href = url;}
 window.addEventListener('load', () => {
     const toolbar:any = document.getElementById("toolbar")
     const windowHeight = window.innerHeight;

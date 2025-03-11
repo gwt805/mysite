@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import router from "@/routes/index";
+
 const yiyan = ref("");
 const displayedText = ref("");
 const typingInterval = ref();
@@ -93,7 +93,7 @@ const mouseup = () => {
         startTyping();
     }
 }
-const go = (url: string) => { router.push(url) }//window.location.href = url;}
+const go = (url: string) => { window.location.href = url;}
 onMounted(() => { getYiyan(); });
 onUnmounted(() => {
     clearInterval(typingInterval.value);

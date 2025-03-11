@@ -13,8 +13,7 @@ http.interceptors.response.use(
     (res) => {
         if (res.data.code == -2) {
             window.localStorage.clear();
-            router.push(`/login?redirect=${router.currentRoute.value.fullPath}`)
-            // window.location.href = `/login?redirect=${router.currentRoute.value.fullPath}`;
+            window.location.href = `/login?redirect=${router.currentRoute.value.fullPath}`;
         } else return res.data;
     },
     (error) => {
