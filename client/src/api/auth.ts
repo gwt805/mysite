@@ -7,5 +7,5 @@ interface login_rep {
     token: string
 }
 export const login = async (username: string, password: string):Promise<login_rep> => {
-    return await http.post("/api/auth/login/", {username: username, password: password});
+    return await http.post("api/auth/login/", {username: username, password: password});
 };
