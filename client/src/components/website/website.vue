@@ -63,7 +63,7 @@ const init = () => {
     getdata(search.value.trim()).then(
         (res: any) => {
             data.value = res.data;
-            placeholder.value = res.data[Math.floor(Math.random()*res.data.length)]['tag']
+            placeholder.value = res.data[Math.floor(Math.random()*res.data.length)]?.['tag'];
             loadingService.close();
         },
         (err:any)=>{
