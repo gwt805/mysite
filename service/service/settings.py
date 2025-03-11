@@ -40,7 +40,8 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
-    'authorization'
+    'authorization',
+    'access-control-allow-origin'
 ]
 # DATA_UPLOAD_MAX_NUMBER_FILES
 DATA_UPLOAD_MAX_NUMBER_FILES = math.inf
