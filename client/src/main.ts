@@ -9,11 +9,11 @@ import "element-plus/theme-chalk/dark/css-vars.css";
 import zhCn from "element-plus/es/locale/lang/zh-cn";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
-// disableDevtool({
-//     url: "https://www.baidu.com/",
-//     timeOutUrl: "https://www.baidu.com/",
-//     interval: 10
-// });
+disableDevtool({
+    url: "https://www.baidu.com/",
+    timeOutUrl: "https://www.baidu.com/",
+    interval: 10
+});
 
 const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
