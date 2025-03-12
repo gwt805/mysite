@@ -16,7 +16,7 @@ logger.info(f"APP_ID: {APP_ID} BOT_SECRET: {BOT_SECRET}")
 @csrf_exempt
 def qqbot(request):
     if request.method == 'POST':
-        data = json.loads(request.body())
+        data = json.loads(request.body)
         logger.info(data)
 
         if not data: return JsonResponse({"error": "Invalid request"})
