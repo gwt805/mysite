@@ -5,6 +5,7 @@ import requests
 from nacl import signing
 from loguru import logger
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 APP_ID = os.getenv('APP_ID', "") # your appID
 BOT_SECRET = os.getenv('BOT_SECRET', "") # your secret
@@ -12,6 +13,7 @@ processed_message_ids = set()
 
 logger.info(f"APP_ID: {APP_ID} BOT_SECRET: {BOT_SECRET}")
 
+@csrf_exempt
 def qqbot(request):
     if request.method == 'POST':
         data = json.loads(request.body())
