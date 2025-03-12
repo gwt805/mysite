@@ -8,7 +8,7 @@ except ImportError:
 
 # 白名单，表示请求里面的路由时不验证登录信息
 API_WHITELIST = [
-    "/qqbot/",
+    "/api/qqbot/",
     "/api/webnav/",
     "/api/systeminfo/",
     "/api/auth/login/",
