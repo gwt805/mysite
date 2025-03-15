@@ -61,6 +61,9 @@ const loginfn = () => {
         }
       }, 2000);
     } else public_elmsg_warning(res.msg);
+  }).catch((err:any)=> {
+    loading.value = false;
+    public_elmsg_warning("服务器异常, 请稍后再试");
   })
 };
 const backup = () => window.history.back();

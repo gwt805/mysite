@@ -73,20 +73,18 @@ const formatDate = (dateString: string) => {
 
 const get_data = () => {
     loading.value = true;
-    try {
-        get_blog_all(currentPage.value, pageSize.value, search_input.value.trim()).then((res)=> {
-            if (res.code == 0) {
-                count.value = res.count || 0;
-                pageData.value = res.data || [];
-            } else {
-                public_elmsg_error(res.msg);
-            }
-        });
-    } catch (error) {
-        public_elmsg_error('获取数据失败');
-    } finally {
+    get_blog_all(currentPage.value, pageSize.value, search_input.value.trim()).then((res)=> {
+        if (res.code == 0) {
+            count.value = res.count || 0;
+            pageData.value = res.data || [];
+        } else {
+            loading.value = false;
+            public_elmsg_error(res.msg);
+        }
+    }).catch((err: any) => {
         loading.value = false;
-    }
+        public_elmsg_error("获取数据失败 , 请稍后重试");
+    });
 }
 const go = (url: string) => { window.location.href = url;}
 const goto = (path: string, id: number) => {

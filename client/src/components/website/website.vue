@@ -40,12 +40,12 @@
 </template>
 
 <script setup lang="ts">
-import { CaretRight, Search } from "@element-plus/icons-vue";
 import { ref, onMounted } from "vue";
 import { getdata } from "@/api/website";
 import { ElLoading } from "element-plus";
+import { public_elmsg_error } from "@/utils/elmsg";
 import { Paperclip } from "@element-plus/icons-vue";
-
+import { CaretRight, Search } from "@element-plus/icons-vue";
 const data: any = ref([])
 const search = ref("");
 const placeholder = ref("");
@@ -67,10 +67,13 @@ const init = () => {
             loadingService.close();
         },
         (err:any)=>{
-            console.log(err);
+            public_elmsg_error("获取数据失败 , 请稍后再试");
             loadingService.close();
         }
-    );
+    ).catch((err:any)=>{
+        public_elmsg_error("获取数据失败 , 请稍后再试");
+        loadingService.close()
+    });
 }
 const go = (url: string) => { window.location.href = url;}
 onMounted(() => {init()})

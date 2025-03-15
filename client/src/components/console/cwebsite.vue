@@ -125,6 +125,8 @@ const get_data = () => {
     cgetdata(search.value.trim(), currentPage.value, pageSize.value).then((res: any) => {
         tableData.value = res.data;
         count.value = res.count;
+    }).catch((err: any) => {
+        public_elmsg_error("获取数据失败");
     })
 }
 const get_tag = () => {
@@ -149,6 +151,8 @@ const editRow = () => {
         }else {
             public_elmsg_error(res.msg);
         }
+    }).catch((err: any) => {
+        public_elmsg_error("更新数据失败");
     })
 }
 const deleteRow = (index: number) => {
@@ -159,6 +163,8 @@ const deleteRow = (index: number) => {
         }else {
             public_elmsg_error(res.msg);
         }
+    }).catch((err: any) => {
+        public_elmsg_error("删除数据失败");
     })
 }
 const addRow = () => {
@@ -170,6 +176,8 @@ const addRow = () => {
         }else {
             public_elmsg_error(res.msg);
         }
+    }).catch((err: any) => {
+        public_elmsg_error("添加数据失败");
     })
 }
 onMounted(() => {

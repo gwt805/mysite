@@ -35,8 +35,8 @@
 
 <script setup lang="ts">
 import { ref, type Ref, onMounted } from 'vue'
-import { public_elmsg_error, public_elmsg_success } from '@/utils/elmsg';
 import { get_blog_all, deleteblog } from "@/api/blog";
+import { public_elmsg_error, public_elmsg_success } from '@/utils/elmsg';
 
 const currentPage = ref(1);
 const pageSize = ref(20);
@@ -48,6 +48,8 @@ const get_data = () => {
     get_blog_all(currentPage.value, pageSize.value, search.value.trim()).then((res: any) => {
         tableData.value = res.data;
         count.value = res.count;
+    }).catch((err: any) => {
+        public_elmsg_error("获取数据失败");
     })
 }
 const go = (url: string) => { window.location.href = url }

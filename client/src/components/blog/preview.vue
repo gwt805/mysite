@@ -162,6 +162,8 @@ onMounted(() => {
             content.value = res.data?.content
             title.value = res.data?.title
         }else public_elmsg_warning(res.msg)
+    }).catch((err)=> {
+        public_elmsg_error("获取博客失败 , 请稍后再试")
     })
 })
 // 组件销毁时，也及时销毁编辑器
