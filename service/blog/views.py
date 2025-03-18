@@ -56,7 +56,7 @@ def create_blog(request):
             if title.strip() == '' or content.strip() == '':
                 return JsonResponse({'code': -1, 'status': 'error', 'msg': "标题或内容不能为空"})
             else:
-                md = Blog.objects.create(title=title, content=content).save()
+                md = Blog.objects.create(title=title, content=content)
                 id = md.id
                 if Blogfile.objects.filter(bid=id).exists():
                     if filelist:
